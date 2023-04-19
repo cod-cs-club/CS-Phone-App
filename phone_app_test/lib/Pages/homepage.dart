@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:phone_app_test/Custom Widgets/appbar.dart'; // appbar widget
-import 'package:phone_app_test/Custom Widgets/calendar.dart'; // calendar widget
-import 'package:phone_app_test/Custom Widgets/todo.dart'; // to-do list widget
+import 'package:phone_app_test/Custom-Widgets/appbar.dart'; // appbar widget
+import 'package:phone_app_test/Custom-Widgets/calendar.dart'; // calendar widget
+import 'package:phone_app_test/Custom-Widgets/todo.dart'; // to-do list widget
 
 class Homepage extends StatelessWidget {
 // this is the study app class that extends a stateless widget which means this context is static
@@ -20,12 +20,6 @@ class Homepage extends StatelessWidget {
     the application.
     */
 
-    /*
-    a material app is a preset widget for building apps, not needed for everything
-    but a good place to start building apps. 'home:' is a property of this widget
-    that you can assign other widgets to represent.
-    */
-
     return Scaffold( 
       extendBody: true, // if this is false, then the scroll list view works as expected but it breaks the appbar
       body: Container( // this is the background color/gradient
@@ -39,7 +33,7 @@ class Homepage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(25),
           children: <Widget>[
-            const Calendar(),
+            const Calendar(), // don't believe either calendar or todo will be constants, since they will need to contain states and grow respectively
             const TodoList(),
             Container( // this fixes the problem of the extendbody property, just leave it please until we fix it
               height: 100,
