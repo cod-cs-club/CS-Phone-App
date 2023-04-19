@@ -28,7 +28,7 @@ class Homepage extends StatelessWidget {
 
     return Scaffold( 
       extendBody: true, // if this is false, then the scroll list view works as expected but it breaks the appbar
-      body: Container(
+      body: Container( // this is the background color/gradient
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -39,30 +39,8 @@ class Homepage extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.all(25),
           children: <Widget>[
-
-            // put calendar widget here
-            Padding(
-              padding: const EdgeInsets.only(top: 12.5, bottom: 12.5),
-              child: Container(
-                height: 375,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromARGB(255, 90, 90, 90),
-                ),
-              ),
-            ),
-
-            // put to-do list widget here
-            Padding(
-              padding: const EdgeInsets.only(top: 12.5, bottom: 12.5),
-              child: Container(
-                height: 375,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromARGB(255, 90, 90, 90),
-                ),
-              ),
-            ),
+            const Calendar(),
+            const TodoList(),
             Container( // this fixes the problem of the extendbody property, just leave it please until we fix it
               height: 100,
             )
