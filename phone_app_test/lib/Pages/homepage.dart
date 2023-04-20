@@ -30,15 +30,18 @@ class Homepage extends StatelessWidget {
             colors: [Color(0xff414345), Color(0xff232526)],
           )
         ),
-        child: ListView(
-          padding: const EdgeInsets.all(25),
-          children: <Widget>[
-            const Calendar(), // don't believe either calendar or todo will be constants, since they will need to contain states and grow respectively
-            const TodoList(),
-            Container( // this fixes the problem of the extendbody property, just leave it please until we fix it
-              height: 100,
-            )
-          ],
+        child: ScrollConfiguration(
+          behavior: NoScrollGlow(),
+          child: ListView(
+            padding: const EdgeInsets.all(25),
+            children: <Widget>[
+              const CalendarCard(), // don't believe either calendar or todo will be constants, since they will need to contain states and grow respectively
+              const TodoList(),
+              Container( // this fixes the problem of the extendbody property, just leave it please until we fix it
+                height: 100,
+              )
+            ],
+          ),
         )
       ),
       bottomNavigationBar: const CustomBottomBar()
@@ -46,4 +49,15 @@ class Homepage extends StatelessWidget {
   }
 }
 
+// this is a scroll behavior that removes the scroll glow otherwise present in listview
+// when a user scrolls to the top or bottom of a listview
+class NoScrollGlow extends ScrollBehavior {
+  @override
+  Widget buildOverscrollIndicator(
+      BuildContext context, Widget child, ScrollableDetails details) {
+    return child;
+  }
+}
+
 // When you're ready to run everything, press ctrl+f5 to
+
