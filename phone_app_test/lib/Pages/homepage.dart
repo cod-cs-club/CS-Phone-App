@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:phone_app_test/Custom-Widgets/appbar.dart'; // appbar widget
 import 'package:phone_app_test/Custom-Widgets/calendar.dart'; // calendar widget
-import 'package:phone_app_test/Custom-Widgets/todo.dart'; // to-do list widget
+import 'package:phone_app_test/Custom-Widgets/todo.dart'; // to-do list widget, might delete
+import 'package:phone_app_test/Custom-Widgets/homePage.dart'; // to-do list widget ACTIVE FILE
 
 class Homepage extends StatelessWidget {
 // this is the study app class that extends a stateless widget which means this context is static
@@ -36,7 +37,10 @@ class Homepage extends StatelessWidget {
             padding: const EdgeInsets.all(25),
             children: <Widget>[
               const CalendarCard(), // don't believe either calendar or todo will be constants, since they will need to contain states and grow respectively
-              const TodoList(),
+              SizedBox(
+                height: 600, // set the height to whatever value you want
+                child: HomePage(), // Todo list widget homepage
+                ),
               Container( // this fixes the problem of the extendbody property, just leave it please until we fix it
                 height: 100,
               )

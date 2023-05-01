@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:phone_app_test/Custom-Widgets/taskTile.dart'; // task tile to be used later
+import 'package:phone_app_test/Custom-Widgets/homePage.dart';
 
 // will need reformating
 
@@ -11,9 +12,9 @@ class TodoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12.5, bottom: 12.5),
+      padding: EdgeInsets.only(top: 12.5, bottom: 12.5),
       child: Container(
-        height: 375, // arbitrary size for the box, we want the calendar to fit in here
+        height: 500, // arbitrary size for the box, we want the calendar to fit in here
         decoration: BoxDecoration( // this gives the rounded corners and box color
           borderRadius: BorderRadius.circular(5),
           color: const Color(0xff161616),

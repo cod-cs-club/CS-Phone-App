@@ -18,5 +18,3 @@ void main() {
   and like C++ initializes at the main function 
   */
 }
-
-
